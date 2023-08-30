@@ -1,1 +1,26 @@
+from random import randint
 
+number = randint(1,100)
+print(number)
+print("welcome to the guessing game, to get started, please guess the following number between 1-100")
+
+#range check + var check
+def range_check():
+        while True:
+            try:
+                guess = int(input(""))
+            except ValueError:  
+                print("incorrect value entered")
+                continue
+            if guess not in range(0,100):
+                    print("not in range")
+            if guess < number:
+                print("too low, try again!")
+            if guess > number:
+                print("too high, try again!")
+            if guess == number:
+                print("    You Won!     ")
+                print("Game is now over.")
+
+
+range_check()
